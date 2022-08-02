@@ -20,13 +20,14 @@ a{
     text-decoration: none;
 
     background-color: #E2F5F3;
-    color: black;
+    color: gray;
     border-bottom: 3px solid transparent;
     font-weight: 500;
     transition: 0.1s linear;
 }
 
 a:hover{
+    color: black;
     background: transparent;
     border-bottom: 3px solid #12C4B9;
 }
