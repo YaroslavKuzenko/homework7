@@ -1,0 +1,114 @@
+body{
+    box-sizing: border-box;
+    margin: 15px;
+    font-family: 'Montserrat';
+}
+
+.radios, .checkboxes{
+    margin-bottom: 20px;
+}
+
+label{
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+input{
+    display: none;
+}
+
+.r-box{
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid darkgray;
+    border-radius: 25px;
+    position: relative;
+    transition: .2s;
+}
+
+.r-box:hover{
+    border-color: gray;
+}
+
+.r-box::before{
+    content: '';
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+
+    border-radius: 25px;
+    background-color: deeppink;
+    opacity: 0;
+}
+
+input:checked + .r-box::before{
+    opacity: 1;
+}
+
+input:checked + .r-box{
+    border-color: deeppink;
+}
+
+
+.ch-box{
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgray;
+    position: relative;
+    transition: .2s;
+}
+
+.ch-box:hover{
+    background-color: darkgray;
+}
+
+.ch-box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 0;
+    border: 1px solid white;
+    background-color: white;
+    transform: translate(-2px, 15px) rotate(45deg);
+
+    transition: .2s;
+    opacity: 0;
+}
+
+.ch-box::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    background-color: white;
+    border: 1px solid white;
+    transform: translate(2px, -5px) rotate(-50deg);
+
+    transition: .2s;
+    opacity: 0;
+}
+
+input:checked + .ch-box::before{
+    opacity: 1;
+}
+
+input:checked + .ch-box::after{
+    opacity: 1;
+}
+
+input:checked + .ch-box{
+    background-color: mediumpurple;
+}
